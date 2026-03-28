@@ -1,1 +1,292 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upíří Zuby</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #c1121f; /* temně krvavě červená */
+            --dark: #0a0a0a;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.4s;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .btn-hover {
+            transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .btn-hover:hover {
+            transform: translateY(-5px) scale(1.06);
+            box-shadow: 0 25px 30px -10px rgba(193, 18, 31, 0.45);
+        }
+        .vampire-glow {
+            text-shadow: 0 0 20px rgba(193, 18, 31, 0.6);
+        }
+        .section-bg {
+            background-image: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95));
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
+    <!-- NAVIGACE -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-xl border-b border-red-950">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <i class="fas fa-dragon text-4xl text-red-600"></i>
+                <span class="text-3xl font-black tracking-tighter vampire-glow">UPÍŘÍ ZUBY</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+                <a href="#o-nas" class="nav-link">O NÁS</a>
+                <a href="#sluzby" class="nav-link">SLUŽBY</a>
+                <a href="#kontakt" class="nav-link">KONTAKT</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <!-- Košík odstraněn podle požadavku – místo toho stylový button na kontakt -->
+                <a href="#kontakt" class="btn-hover bg-red-700 hover:bg-red-600 text-white font-semibold px-8 py-3.5 rounded-full items-center gap-2 text-sm uppercase tracking-widest flex">
+                    <i class="fas fa-fang"></i> OBJEDNAT KOUZLO
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="min-h-screen bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)),url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80')] bg-cover bg-center flex items-center pt-20">
+        <!-- Alternativní temný hradní background: https://picsum.photos/id/1015/2000/1200 (gotický hrad) nebo použijte krvavý měsíc -->
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-3 bg-red-950/70 px-6 py-2 rounded-full mb-6 border border-red-800">
+                <i class="fas fa-moon text-red-500"></i>
+                <span class="uppercase tracking-[4px] text-sm font-medium">Temné umění péče o úsměv</span>
+            </div>
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter vampire-glow leading-none">
+                UPÍŘÍ<br>ZUBY
+            </h1>
+            <p class="mt-8 text-2xl md:text-3xl text-zinc-300 max-w-2xl mx-auto">
+                Dokonalé, ostré a neodolatelně krvavě krásné zuby. 
+                Specializujeme se na upíří estetiku a péči o tesáky.
+            </p>
+            <div class="mt-12 flex flex-wrap gap-5 justify-center">
+                <a href="#sluzby" class="btn-hover bg-red-700 hover:bg-red-600 px-10 py-5 rounded-full font-semibold text-xl flex items-center gap-3">
+                    <i class="fas fa-tooth"></i> 
+                    Prohlédnout služby
+                </a>
+                <a href="#kontakt" class="btn-hover border-2 border-red-600 hover:bg-red-950 px-10 py-5 rounded-full font-semibold text-xl">
+                    Domluvit se na kousnutí
+                </a>
+            </div>
+            <div class="mt-16 text-zinc-500 flex justify-center gap-8 text-sm">
+                <div class="flex items-center gap-2"><i class="fas fa-bat text-red-500"></i> Temnota zaručena</div>
+                <div class="flex items-center gap-2"><i class="fas fa-droplet text-red-500"></i> Krvavá kvalita</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O NÁS -->
+    <section id="o-nas" class="py-24 section-bg">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-lg">
+                <h2 class="text-6xl font-black tracking-tighter vampire-glow">O NÁS</h2>
+                <p class="text-zinc-300 leading-relaxed">
+                    Vítejte v ateliéru <span class="text-red-500 font-semibold">Upíří Zuby</span>. Jsme temné studio, které se specializuje na péči o upíří tesáky, estetiku gotického úsměvu a vše, co patří k nočnímu lovu.
+                </p>
+                <p class="text-zinc-300 leading-relaxed">
+                    Naše služby promění váš úsměv v smrtící zbraň plnou elegance. Používáme pouze prémiové materiály – od krvavě červených gelů přes černý vosk až po stříbrné leštidla, která odrážejí měsíční světlo.
+                </p>
+                <div class="grid grid-cols-3 gap-6 text-center mt-12">
+                    <div>
+                        <div class="text-5xl font-black text-red-600">666</div>
+                        <div class="text-zinc-400 text-sm mt-1">spokojených upírů</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black text-red-600">13</div>
+                        <div class="text-zinc-400 text-sm mt-1">let v temnotě</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black text-red-600">100%</div>
+                        <div class="text-zinc-400 text-sm mt-1">krvavá spokojenost</div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden border border-red-900 shadow-2xl shadow-red-950">
+                <img src="https://picsum.photos/id/1015/800/600" alt="Gotický hrad v noci" class="w-full h-[420px] object-cover">
+                <!-- Nebo lepší: upíří zuby close-up -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SLUŽBY (dříve CENÍK) -->
+    <section id="sluzby" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-6xl font-black text-center mb-16 vampire-glow">NAŠE TEMNÉ SLUŽBY</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Služba 1 -->
+                <div class="bg-zinc-900 border border-red-900 rounded-3xl p-8 flex flex-col hover:border-red-600 transition-all group">
+                    <div class="text-red-500 mb-6">
+                        <i class="fas fa-tooth text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Bělení tesáků na smrtící bílou</h3>
+                    <p class="text-zinc-400 flex-1">Profesionální bělení, které udělá vaše zuby jasnější než úplněk. Dlouhotrvající efekt i při nočním lovu.</p>
+                    <div class="mt-10 text-4xl font-black text-red-600">1 290 Kč</div>
+                    <button onclick="alert('Služba přidána do temného seznamu zájmů! (Košík byl odstraněn)')" class="mt-6 w-full bg-red-700 hover:bg-red-600 py-4 rounded-2xl font-semibold transition">
+                        Zarezervovat kousnutí
+                    </button>
+                </div>
+
+                <!-- Služba 2 -->
+                <div class="bg-zinc-900 border border-red-900 rounded-3xl p-8 flex flex-col hover:border-red-600 transition-all group">
+                    <div class="text-red-500 mb-6">
+                        <i class="fas fa-droplet text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Krvavý lesk a glazura</h3>
+                    <p class="text-zinc-400 flex-1">Nanášíme speciální krvavě červený lesk, který zuby vypadají jako po čerstvém kousnutí. Extra odolný proti slunci.</p>
+                    <div class="mt-10 text-4xl font-black text-red-600">890 Kč</div>
+                    <button onclick="alert('Služba přidána do temného seznamu zájmů! (Košík byl odstraněn)')" class="mt-6 w-full bg-red-700 hover:bg-red-600 py-4 rounded-2xl font-semibold transition">
+                        Zarezervovat kousnutí
+                    </button>
+                </div>
+
+                <!-- Služba 3 -->
+                <div class="bg-zinc-900 border-2 border-red-600 rounded-3xl p-8 flex flex-col hover:border-red-500 transition-all group relative">
+                    <div class="absolute -top-4 right-8 bg-red-600 text-white text-xs font-bold px-6 py-1 rounded-full">NEJOBLÍBENĚJŠÍ</div>
+                    <div class="text-red-500 mb-6">
+                        <i class="fas fa-skull text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-500">Kompletní upíří transformace</h3>
+                    <p class="text-zinc-400 flex-1">Bělení + tvarování + krvavý lesk + ochrana proti česneku. Váš úsměv se stane legendou noci.</p>
+                    <div class="mt-10 text-5xl font-black text-red-600">2 666 Kč</div>
+                    <button onclick="alert('Služba přidána do temného seznamu zájmů! (Košík byl odstraněn)')" class="mt-6 w-full bg-white hover:bg-zinc-100 text-zinc-950 py-4 rounded-2xl font-semibold transition">
+                        Zarezervovat kousnutí
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 text-zinc-500 italic">
+                Další temné rituály (jako prodlužování tesáků nebo černé diamantové vsadky) lze domluvit individuálně.
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="py-24 bg-zinc-950 border-t border-red-950">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-5xl font-black mb-10 vampire-glow">KONTAKTUJTE NÁS V TEMNOTĚ</h2>
+                <form id="kontakt-form" class="space-y-6">
+                    <input type="text" name="name" placeholder="Vaše temné jméno" required class="w-full bg-zinc-900 border border-red-900 focus:border-red-600 rounded-2xl px-6 py-5 outline-none text-lg">
+                    <input type="tel" name="phone" placeholder="Telefon (pro noční volání)" required class="w-full bg-zinc-900 border border-red-900 focus:border-red-600 rounded-2xl px-6 py-5 outline-none text-lg">
+                    <input type="email" name="email" placeholder="E-mail (pro krvavé nabídky)" required class="w-full bg-zinc-900 border border-red-900 focus:border-red-600 rounded-2xl px-6 py-5 outline-none text-lg">
+                    <textarea name="message" placeholder="Popište svůj sen o dokonalých tesácích..." rows="5" required class="w-full bg-zinc-900 border border-red-900 focus:border-red-600 rounded-3xl px-6 py-5 outline-none resize-none text-lg"></textarea>
+                    <button type="submit" class="w-full bg-red-700 hover:bg-red-600 py-6 text-xl font-bold rounded-3xl transition-all flex items-center justify-center gap-3">
+                        <i class="fas fa-paper-plane"></i> 
+                        POSLAT DO TEMNOTY
+                    </button>
+                </form>
+                <div id="success-message" class="hidden mt-8 p-8 bg-green-950/50 border border-green-800 rounded-3xl text-center">
+                    <i class="fas fa-check-circle text-5xl text-green-400 mb-4"></i>
+                    <p class="text-xl font-semibold text-green-300">Zpráva byla odeslána do našeho hradu.<br>Brzy se ozveme z temnoty.</p>
+                </div>
+            </div>
+
+            <div class="space-y-10 pt-8">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 flex items-center gap-4">
+                        <i class="fas fa-bat text-red-600"></i> 
+                        Kontaktní informace
+                    </h3>
+                    <div class="space-y-6 text-lg">
+                        <div class="flex items-start gap-5">
+                            <i class="fas fa-at text-red-500 text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-medium">upirizuby@temnota.cz</div>
+                                <div class="text-zinc-500 text-sm">Odpovídáme po západu slunce</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <i class="fas fa-location-dot text-red-500 text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-medium">Hrad v Karpatech (pobočka v ČR)</div>
+                                <div class="text-zinc-500 text-sm">Noční schůzky po dohodě</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <i class="fas fa-phone text-red-500 text-2xl mt-1"></i>
+                            <div>
+                                <div class="font-medium">+420 666 13 13 13</div>
+                                <div class="text-zinc-500 text-sm">Pouze v noci</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/70 border border-red-900 p-8 rounded-3xl">
+                    <p class="italic text-zinc-400">
+                        „Nejlepší investice do mého upířího života. Tesáky teď koušou jako nikdy předtím.“
+                    </p>
+                    <p class="mt-4 text-red-400 text-sm">— Hrabě Vladimír D.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-red-950">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            <p>© 2026 Upíří Zuby • Všechna práva vyhrazena v temnotě</p>
+            <p class="mt-2">Varování: Po našich službách můžete začít mít chuť na krev.</p>
+        </div>
+    </footer>
+
+    <script>
+        // EmailJS init – ponecháno, ale bez funkčních klíčů (pro ukázku)
+        // emailjs.init({ publicKey: "..." }); // Zde by byl váš klíč
+
+        // Kontaktní formulář (jen vizuální odezva)
+        document.getElementById('kontakt-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i> Odesílá se do hradu...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('success-message').classList.remove('hidden');
+                this.reset();
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> POSLAT DO TEMNOTY';
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    document.getElementById('success-message').classList.add('hidden');
+                }, 7000);
+            }, 1400);
+        });
+
+        // Tailwind script už je načtený
+    </script>
+</body>
+</html>
